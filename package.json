@@ -7,7 +7,10 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "turbolinks": "^5.2.0",
-    "water.css": "^2.0.0"
+    "water.css": "^2.0.0",
+    "webpacker-pwa": "^0.1.2",
+    "workbox-routing": "^5.1.4",
+    "workbox-strategies": "^5.1.4"
   },
   "version": "0.1.0",
   "devDependencies": {
