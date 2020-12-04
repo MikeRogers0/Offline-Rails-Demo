@@ -8,18 +8,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("water.css/out/water.min.css")
+require("service_workers")
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js', { scope: "/" })
-      .then(function(registration) {
-      console.log('[ServiceWorker Client]', 'registration successful with scope: ', registration.scope);
-    }, function(err) {
-      console.log('[ServiceWorker Client]','registration failed: ', err);
-    });
-  });
-}
+require("water.css/out/water.min.css")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
