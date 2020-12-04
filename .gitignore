@@ -37,3 +37,5 @@ yarn-debug.log*
 
 /public/*.js
 /public/*.js.map
+
+.env

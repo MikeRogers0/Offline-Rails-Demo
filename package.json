@@ -9,6 +9,8 @@
     "turbolinks": "^5.2.0",
     "water.css": "^2.0.0",
     "webpacker-pwa": "^0.1.2",
+    "workbox-cacheable-response": "^6.0.0",
+    "workbox-expiration": "^6.0.0",
     "workbox-routing": "^5.1.4",
     "workbox-strategies": "^5.1.4"
   },
