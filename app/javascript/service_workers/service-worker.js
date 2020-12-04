@@ -15,7 +15,7 @@ registerRoute(
   })
 );
 
-// For assets, we check the cache first
+// For CSS & JS, we check the cache first
 registerRoute(
   ({request}) => request.destination === "script" ||
   request.destination === "style",
@@ -24,7 +24,7 @@ registerRoute(
   })
 );
 
-// For assets, we check the cache first
+// For Images, we check the cache first
 registerRoute(
   ({request}) => request.destination === "image",
   new CacheFirst({
