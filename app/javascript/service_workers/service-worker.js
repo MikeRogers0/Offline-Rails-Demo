@@ -1,33 +1,15 @@
 import { registerRoute } from 'workbox-routing';
 import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from 'workbox-strategies';
-
-// Used for filtering matches based on status code, header, or both
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
-// Used to limit entries in cache, remove entries after a certain period of time
 import { ExpirationPlugin } from 'workbox-expiration';
 
-// Loading pages, checks the network first
+// Loading pages (and turbolinks requests), checks the network first
 registerRoute(
-  ({request}) => request.destination === "document",
-  new NetworkFirst({
-    cacheName: 'documents',
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 5,
-        maxAgeSeconds: 5 * 60, // 5 minutes
-      }),
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-  })
-);
-
-// Turoblinks, check the network first
-registerRoute(
-  ({request}) => request.destination === "" &&
-  request.mode === "cors" &&
-  request.headers.get('Turbolinks-Referrer') !== null,
+  ({request}) => request.destination === "document" || (
+    request.destination === "" &&
+    request.mode === "cors" &&
+    request.headers.get('Turbolinks-Referrer') !== null
+  ),
   new NetworkFirst({
     cacheName: 'documents',
     plugins: [
