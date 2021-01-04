@@ -28,7 +28,7 @@ end
 group :development do
   gem 'letter_opener', '~> 1.7'
   gem 'letter_opener_web', '~> 1.4'
-  gem 'listen', '~> 3.2'
+  gem 'listen', '~> 3.4'
   gem 'rubocop', '~> 1.1', require: false
   gem 'rubocop-performance', '~> 1.9', require: false
   gem 'rubocop-rails', '~> 2.8', require: false
